@@ -28,4 +28,18 @@ heroku config:set AIRFLOW__CORE__FERNET_KEY=<secret_key>
 heroku config:set AIRFLOW__WEBSERVER__AUTHENTICATE=True
 heroku config:set AIRFLOW__WEBSERVER__AUTH_BACKEND=airflow.contrib.auth.backends.password_auth
 ```
+### User Creation
+```
+heroku run bash
+```
+```
+# create an admin user 
+airflow users create \
+--username admin \
+--firstname Peter \
+--lastname Parker \
+--role Admin \
+--email spiderman@superhero.org
+# it should then prompt for password and re-enter password
+```
 
